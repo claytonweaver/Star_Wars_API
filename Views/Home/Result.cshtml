@@ -1,0 +1,92 @@
+﻿
+
+@{
+    ViewData["Title"] = "Result";
+}
+
+<h1>Result</h1>
+<br />
+<br />
+<br />
+
+@if (ViewBag.StarWarsThing is People)
+{
+<table class="table table-bordered table-hover">
+    <tr>
+        <th class="bg-primary text-light">Name</th>
+        <th class="bg-primary text-light">Height</th>
+        <th class="bg-primary text-light">Mass</th>
+        <th class="bg-primary text-light">Hair Color</th>
+        <th class="bg-primary text-light">Skin Color</th>
+        <th class="bg-primary text-light">Eye Color</th>
+        <th class="bg-primary text-light">Birth Year</th>
+        <th class="bg-primary text-light">Gender</th>
+        <th class="bg-primary text-light">Home World</th>
+    </tr>
+    @for (int i = 0; i < ViewBag.StarWarsThing.Results.Length; i++)
+    {
+
+
+
+
+        <tr>
+            <td>@ViewBag.StarWarsThing.Results[i].Name</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Height</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Mass</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Hair_Color</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Skin_Color</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Eye_Color</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Birth_Year</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Gender</td>
+            <td>@ViewBag.StarWarsThing.Results[i].HomeWorld</td>
+        </tr>
+
+
+
+
+
+
+    }
+</table>
+}
+else if (ViewBag.StarWarsThing is Planets)
+{
+<table class="table table-bordered table-hover">
+    <tr>
+        <th class="bg-primary text-light">Name</th>
+        <th class="bg-primary text-light">Rotation Period</th>
+        <th class="bg-primary text-light">Orbital Period</th>
+        <th class="bg-primary text-light">Diameter</th>
+        <th class="bg-primary text-light">Climate</th>
+        <th class="bg-primary text-light">Gravity</th>
+        <th class="bg-primary text-light">Terrain</th>
+        <th class="bg-primary text-light">Surface Water</th>
+        <th class="bg-primary text-light">Population</th>
+    </tr>
+    @for (int i = 0; i < ViewBag.StarWarsThing.Results.Length; i++)
+    {
+
+        <tr>
+            <td>@ViewBag.StarWarsThing.Results[i].Name</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Rotation_Period</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Orbital_Period</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Diameter</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Climate</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Gravity</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Terrain</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Surface_Water</td>
+            <td>@ViewBag.StarWarsThing.Results[i].Population</td>
+        </tr>
+
+    }
+
+</table>
+
+}
+<br />
+<br />
+<br />
+<button onclick="window.location.href='../Home/Search'" class="btn btn-primary">Search Again</button>
+<button onclick="window.location.href='../Home/Index'" class="btn btn-danger">Go Home</button>
+
+
